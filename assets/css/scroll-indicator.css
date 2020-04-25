@@ -2,11 +2,33 @@
  * @Date        : 2020-04-24 22:57:41
  * @LastEditors: anlzou
  * @Github      : https://github.com/anlzou
- * @LastEditTime: 2020-04-24 23:14:42
+ * @LastEditTime: 2020-04-25 13:56:44
  * @FilePath    : \css_demo\assets\css\scroll-indicator.css
  * @Describe    : 
  */
+
  body {
+    position: relative;
+}
+.indicator {
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+    background: linear-gradient(to right top, #818791 50%, transparent 50%) no-repeat;
+    background-size: 100% calc(100% - 98vh);
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: darken;
+}
+.indicator::after {
+    content: '';
+    position: fixed;
+    top: 5px; bottom: 0; right: 0; left: 0;
+    background: #fff;
+    z-index: 1;
+}
+/* teal */
+
+ /* body {
     position: relative;
     padding: 50px;
     font-size: 24px;
@@ -15,12 +37,12 @@
     background-size: 100% calc(100% - 100vh + 5px);
     background-repeat: no-repeat;
     z-index: 1;
-}
+} */
 body::-webkit-scrollbar {
     display: none;
 }
 
-body::after {
+/* body::after {
     content: "";
     position: fixed;
     top: 5px;
@@ -29,7 +51,7 @@ body::after {
     right: 0;
     background: #fff;
     z-index: -1;
-}
+} */
 
 
 /**
